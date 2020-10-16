@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>List Keeper</title>
+</head>
+<body>
+    <div class="forecast-container">
+        <div class="weather-container">
+            <div class="date"></div>
+            <div class="location">
+              <p>-</p>
+            </div>
+            <div class="error-notification"></div>
+            <div class="weather-icon"></div>
+            <div class="temp-container">
+                <div class="temperature">
+                    <p>- °<span>C</span></p>
+                </div>
+                <div class="min-max-temp">
+                    <p>- °<span>C</span> / - °<span>C</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tasks-container">
+        <header>
+            <h2 class="task-list-title">My Lists</h2>
+            <div class="deleteAll">
+                <i class="far fa-trash-alt"></i>
+            </div>
+            <div class="add-todo">
+                <i class="fas fa-caret-down"></i>
+            </div>
+        </header>
+        <ul class="task-lists"></ul>
+        <div class="all-tasks-input">
+            <input type="text" id="list-input" placeholder="Create New List" autocomplete="off">
+            <button id="addList">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="todo-container">
+        <div class="content">
+            <ul id="todo-items"></ul>
+        </div>
+        <header>
+            <input type="text" id="input" placeholder= "Add New Task" autocomplete="off">
+            <button id="addItem">
+                <i class="fas fa-plus"></i>
+            </button>
+        </header>
+        
+    </div>
+    <div class="reset">
+        <p>Delete All Items</p>
+    </div>
+    
+    <script src="assets/js/weather.js"></script>
+    <script src="assets/js/todo.js"></script>
+</body>
+</html>

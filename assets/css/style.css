@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,700|Quicksand:300,400,500,600&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-image: linear-gradient(to left, #859398, #37415f);
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+.forecast-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #edf0f1;
+  border-radius: 5px;
+  position: relative;
+}
+
+.date {
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  padding-left: 10px;
+  margin-right: 20px;
+  /* text-align: center; */
+  font-size: 1.0rem;
+  letter-spacing: 1px;
+}
+
+.weather-container {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(44, 62, 80, 0.30);
+  display: flex;
+}
+
+.location {
+  height: 50px;
+  display: flex;
+}
+
+.location p {
+  margin: 0;
+  height: 50px;
+  color: #293251;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.error-notification {
+  background-color: #f8d7da;
+  display: none;
+}
+
+.error-notification p {
+  color: #721c24;
+  font-size: 1.0rem;
+  margin: 0;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.temp-container {
+  height: 50px;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.temperature p {
+  height: 30px;
+  padding-top: 4px;
+  color: #293251;
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: pointer;  
+}
+
+.min-max-temp p {
+  height: 20px;
+  color: #293251;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.weather-icon {
+  height: 30px;
+}
+
+.weather-icon img {
+  text-align: center;
+}
+
+.weather-description {
+  color: #293251;
+  text-align: center;
+  font-size: 1.0rem;
+  text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+.tasks-container {
+  max-width: 500px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: #edf0f1; */
+  border-radius: 5px;
+  position: relative;
+}
+
+
+button#addList {
+  position: relative;
+  /* float: right; */
+  height: 50px;
+  width: 50px;
+  top: 15px;
+  right: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #8ca9b1;
+  z-index: 2;
+  outline: none;
+  border: none;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.active-list {
+  font-weight: 700;
+}
+
+.todo-container {
+  max-width: 500px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #edf0f1;
+  border-radius: 5px;
+  position: relative;
+}
+
+.todo-container header {
+  width: 100%;
+  min-height: 80px;
+  padding: 15px;
+  background-color: #4d758f;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+#input {
+  font-size: 1.1rem;
+  font-family: Quicksand, sans-serif;
+  color: #fff;
+  background-color: #8ca9b1;
+  width: 100%;
+  height: 50px;
+  float: left;
+  padding: 0 50px 0 0;
+  text-indent: 15px;
+  border: none;
+  position: relative;
+  z-index: 1;
+  border-radius: 25px;
+}
+
+#input::placeholder {
+  color: #fff;
+}
+
+#input:focus {
+  background-color: #8ca9b1;
+  outline: none;
+}
+
+button#addItem {
+  position: absolute;
+  float: right;
+  height: 50px;
+  width: 50px;
+  top: 15px;
+  right: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #8ca9b1;
+  z-index: 2;
+  outline: none;
+  border: none;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+ul#todo-items {
+  width: 100%;
+  float: left;
+  list-style: none;
+  border-radius: 0 0 10px 10px;
+  padding: 0 15px;
+}
+
+li#todo-item {
+  width: 100%;
+  min-height: 40px;
+  line-height: 40px;
+  font-size: 1.1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 10px 0;
+  box-shadow: 0px 1px 3px rgba(44, 62, 80, 0.30);
+  word-break: break-word;
+}
+
+.trash {
+  min-height: 40px;
+  line-height: 40px;
+  margin-left: 3px;
+  text-align: center;
+  font-size: 18px;
+  color: #b97068;
+  width: 0;
+  display: inline-block;
+  transition: 0.2s linear;
+  opacity: 0;
+  /* border-radius: 0 3px 3px 0; */
+  cursor: pointer;
+}
+
+.edit {
+  min-height: 40px;
+  line-height: 40px;
+  margin-right: 2px;
+  text-align: center;
+  font-size: 18px;
+  color: #61799cc9;
+  width: 0;
+  display: inline-block;
+  transition: 0.2s linear;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.save {
+  min-height: 40px;
+  line-height: 40px;
+  font-size: 22px;
+  text-align: center;
+  float: right;
+  position: relative;
+  color: #61799cc9;
+  margin-right: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.display-save {
+  display: inline-block;
+}
+
+span.text:focus {
+  display: inline-block;
+  border: 1px solid #e5e5e5;
+  box-shadow: 1px 1px 1px rgba(44, 62, 80, 0.10);
+  width: 60%;
+  margin: 0;
+  padding-left: 10px;
+  min-height: 30px;
+  line-height: 30px;
+  font-size: 1.1rem;
+  font-family: Quicksand, sans-serif;
+  background-color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+li:hover .trash,
+li:hover .edit {
+  width: 30px;
+  opacity: 1.0;
+}
+
+.check {
+  height: 40px;
+  font-size: 20px;
+  float: right;
+  position: relative;
+  line-height: 40px;
+  display: block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+i.fa-circle {
+  color: #b5b5b5;
+}
+
+i.fa-check-circle {
+  color: rgb(51, 126, 51); 
+}
+
+.linethrough {
+  text-decoration: line-through;
+  color: rgb(150, 146, 146);
+} 
+
+.reset {
+  max-width: 125px;
+  margin: 0 auto;
+  padding: 2px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15px;
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  background-color: #6f778a;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.display-btn {
+  display: block;
+}
+
+.noDisplay {
+  display: none;
+}
+
+

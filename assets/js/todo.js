@@ -13,7 +13,44 @@ const uncheck = "fa-circle";
 const linethrough = "completed linethrough";
 
 
-//..........(2) FUNCTIONS..........
+//..........(2) BULK DELETE MODALS..........
+
+// SET UP DELETE COMPLETE MODAL
+const deleteCompletedModal = new tingle.modal({
+  footer: true,
+  cssClass: ['todo-modal'],
+});
+
+deleteCompletedModal.setContent('<h1>Do you want to delete completed todos?</h1>');
+
+deleteCompletedModal.addFooterBtn('Yes', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function () {
+  deleteCompleted();
+  deleteCompletedModal.close();
+});
+
+deleteCompletedModal.addFooterBtn('No', 'tingle-btn tingle-btn--default tingle-btn--pull-right', function () {
+  deleteCompletedModal.close();
+});
+
+// SET UP DELETE ALL MODAL
+const deleteAllModal = new tingle.modal({
+  footer: true,
+  cssClass: ['todo-modal'],
+});
+
+deleteAllModal.setContent('<h1>Do you want to delete All todos?</h1>');
+
+deleteAllModal.addFooterBtn('Yes', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function () {
+  deleteAll();
+  deleteAllModal.close();
+});
+
+deleteAllModal.addFooterBtn('No', 'tingle-btn tingle-btn--default tingle-btn--pull-right', function () {
+  deleteAllModal.close();
+});
+
+
+//..........(3) FUNCTIONS..........
 
 // RENDER STORED TASK ITEMS (IF ANY) WHEN PAGE LOADS
 function getToDo () {
@@ -169,14 +206,12 @@ function deleteCompleted() {
 
 // DELETE ALL TASKS
 function deleteAll() {
-  var question = confirm("Delete your entire ToDo list?");
-  if(question) {
     localStorage.clear();
     location.reload();
-  }
 }
 
-//..........(3) EVENT LISTENERS..........
+
+//..........(4) EVENT LISTENERS..........
 
 // RENDER STORED TASK ITEMS (IF ANY) WHEN PAGE LOADS
 document.addEventListener("DOMContentLoaded", getToDo);
@@ -191,7 +226,11 @@ list.addEventListener("click", editTodo);
 list.addEventListener("click", completeToDo);
 
 // DELETE COMPLETED TASKS
-deleteC.addEventListener("click", deleteCompleted);
+deleteC.addEventListener("click", function() {
+  deleteCompletedModal.open();
+});
 
 // DELETE ALL TASKS
-reset.addEventListener("click", deleteAll);
+reset.addEventListener("click", function() {
+  deleteAllModal.open();
+});

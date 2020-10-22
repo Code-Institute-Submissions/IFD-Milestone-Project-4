@@ -162,7 +162,7 @@ header {
   outline: none;
 }
 
-button {
+.btn {
   position: absolute;
   float: right;
   height: 50px;
@@ -346,4 +346,20 @@ i.fa-check-circle {
 
 .noDisplay {
   display: none;
+}
+
+.todo-modal .tingle-modal-box {
+  width: 30%;
+}
+
+.todo-modal h1 {
+  font-size: 16px;
+}
+
+.todo-modal .tingle-modal-box__footer {
+  padding: 10px;
+}
+
+.todo-modal .tingle-btn {
+  padding: 10px 20px;
 }

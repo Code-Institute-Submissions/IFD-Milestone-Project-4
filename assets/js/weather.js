@@ -1,3 +1,4 @@
+// Weather app built using Open Weather Api
 
 //.....(1) WEATHER......
 
@@ -118,5 +119,5 @@ let options = {
     month: "short"
 };
 
-let today = new Date();
-dateElement.innerHTML = today.toLocaleDateString("en-GB", options);
+let now = new Date();
+dateElement.innerHTML = now.toLocaleDateString("en-GB", options);

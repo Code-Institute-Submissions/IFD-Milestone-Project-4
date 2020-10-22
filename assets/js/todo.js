@@ -1,6 +1,6 @@
 //.....TODO LIST.....
 
-//..........SELECTORS..........
+//..........(1) SELECTORS..........
 const input = document.querySelector("#input");
 const todoBtn = document.querySelector("#addItem");
 const list = document.querySelector("#list");
@@ -13,9 +13,9 @@ const uncheck = "fa-circle";
 const linethrough = "completed linethrough";
 
 
-// RENDER STORED TASK ITEMS (IF ANY) WHEN PAGE LOADS
-document.addEventListener("DOMContentLoaded", getToDo);
+//..........(2) FUNCTIONS..........
 
+// RENDER STORED TASK ITEMS (IF ANY) WHEN PAGE LOADS
 function getToDo () {
   // Check if tasks already stored
   if(localStorage.getItem("storedList") === null) {
@@ -91,8 +91,6 @@ function saveToDo (todo) {
 }
 
 // DELETE TASK
-list.addEventListener("click", deleteToDo);
-
 function deleteToDo(event) {
     let element = event.target;
     const storedList = getToDo;
@@ -103,8 +101,6 @@ function deleteToDo(event) {
 }
 
 // EDIT TASK
-list.addEventListener("click", editTodo);
-
 function editTodo(event) {
     let element = event.target;
     let span = element.parentNode.querySelector(".text");
@@ -148,8 +144,6 @@ function editTodo(event) {
 }
 
 // COMPLETE TASK
-list.addEventListener("click", completeToDo);
-
 function completeToDo(event) {
   let element = event.target;
   if(element.classList.contains("check")) {
@@ -162,8 +156,6 @@ function completeToDo(event) {
 }
 
 // DELETE COMPLETED TASKS
-deleteC.addEventListener("click", deleteCompleted);
-
 function deleteCompleted() {
   let storedList = JSON.parse(localStorage.getItem("storedList"));
   storedList = storedList.filter(todo => !todo.completed);
@@ -176,8 +168,6 @@ function deleteCompleted() {
 }
 
 // DELETE ALL TASKS
-reset.addEventListener("click", deleteAll);
-
 function deleteAll() {
   var question = confirm("Delete your entire ToDo list?");
   if(question) {
@@ -185,3 +175,23 @@ function deleteAll() {
     location.reload();
   }
 }
+
+//..........(3) EVENT LISTENERS..........
+
+// RENDER STORED TASK ITEMS (IF ANY) WHEN PAGE LOADS
+document.addEventListener("DOMContentLoaded", getToDo);
+
+// DELETE TASK
+list.addEventListener("click", deleteToDo);
+
+// EDIT TASK
+list.addEventListener("click", editTodo);
+
+// COMPLETE TASK
+list.addEventListener("click", completeToDo);
+
+// DELETE COMPLETED TASKS
+deleteC.addEventListener("click", deleteCompleted);
+
+// DELETE ALL TASKS
+reset.addEventListener("click", deleteAll);

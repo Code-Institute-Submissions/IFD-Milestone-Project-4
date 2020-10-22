@@ -116,43 +116,6 @@ body {
 
 
 
-
-
-
-
-.tasks-container {
-  max-width: 500px;
-  margin: 20px auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* background-color: #edf0f1; */
-  border-radius: 5px;
-  position: relative;
-}
-
-
-button#addList {
-  position: relative;
-  /* float: right; */
-  height: 50px;
-  width: 50px;
-  top: 15px;
-  right: 15px;
-  font-size: 1.3rem;
-  cursor: pointer;
-  color: #8ca9b1;
-  z-index: 2;
-  outline: none;
-  border: none;
-  background-color: #fff;
-  border-radius: 25px;
-}
-
-.active-list {
-  font-weight: 700;
-}
-
 .todo-container {
   max-width: 500px;
   margin: 20px auto 0 auto;
@@ -160,16 +123,16 @@ button#addList {
   flex-direction: column;
   justify-content: center;
   background-color: #edf0f1;
-  border-radius: 5px;
+  border-radius: 10px;
   position: relative;
 }
 
-.todo-container header {
+header {
   width: 100%;
   min-height: 80px;
   padding: 15px;
   background-color: #4d758f;
-  border-radius: 5px;
+  border-radius: 10px;
   position: relative;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
@@ -199,7 +162,7 @@ button#addList {
   outline: none;
 }
 
-button#addItem {
+button {
   position: absolute;
   float: right;
   height: 50px;
@@ -216,7 +179,7 @@ button#addItem {
   border-radius: 25px;
 }
 
-ul#todo-items {
+ul {
   width: 100%;
   float: left;
   list-style: none;
@@ -224,7 +187,7 @@ ul#todo-items {
   padding: 0 15px;
 }
 
-li#todo-item {
+li {
   width: 100%;
   min-height: 40px;
   line-height: 40px;
@@ -232,54 +195,13 @@ li#todo-item {
   background-color: #fff;
   border-radius: 5px;
   margin: 10px 0;
+  padding-left: 12px;
   box-shadow: 0px 1px 3px rgba(44, 62, 80, 0.30);
-  word-break: break-word;
 }
 
-.trash {
-  min-height: 40px;
-  line-height: 40px;
-  margin-left: 3px;
-  text-align: center;
-  font-size: 18px;
-  color: #b97068;
-  width: 0;
-  display: inline-block;
-  transition: 0.2s linear;
-  opacity: 0;
-  /* border-radius: 0 3px 3px 0; */
-  cursor: pointer;
-}
-
-.edit {
-  min-height: 40px;
-  line-height: 40px;
-  margin-right: 2px;
-  text-align: center;
-  font-size: 18px;
-  color: #61799cc9;
-  width: 0;
-  display: inline-block;
-  transition: 0.2s linear;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.save {
-  min-height: 40px;
-  line-height: 40px;
-  font-size: 22px;
-  text-align: center;
-  float: right;
+span {
   position: relative;
-  color: #61799cc9;
-  margin-right: 10px;
-  cursor: pointer;
-  display: none;
-}
-
-.display-save {
-  display: inline-block;
+  z-index: 0;
 }
 
 span.text:focus {
@@ -298,21 +220,71 @@ span.text:focus {
   outline: none;
 }
 
+.trash {
+  min-height: 40px;
+  line-height: 40px;
+  margin-right: 3px;
+  text-align: center;
+  float: right;
+  font-size: 18px;
+  color: #b97068;
+  width: 0;
+  transition: 0.2s linear;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.edit {
+  min-height: 40px;
+  line-height: 40px;
+  text-align: center;
+  float: right;
+  position: relative;
+  z-index: 4;
+  font-size: 18px;
+  color: #61799cc9;
+  width: 0;
+  transition: 0.2s linear;
+  opacity: 0;
+  cursor: pointer;
+}
+
 li:hover .trash,
 li:hover .edit {
   width: 30px;
   opacity: 1.0;
+  
 }
 
 .check {
-  height: 40px;
+  min-height: 40px;
+  line-height: 40px;
   font-size: 20px;
   float: right;
   position: relative;
+  /* z-index: 2; */
+  text-align: center;
   line-height: 40px;
-  display: block;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.save {
+  min-height: 40px;
+  line-height: 40px;
+  font-size: 22px;
+  text-align: center;
+  float: right;
+  position: relative;
+  z-index: 3;
+  color: #61799cc9;
+  margin-right: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.display-save {
+  display: inline-block;
 }
 
 i.fa-circle {
@@ -328,10 +300,34 @@ i.fa-check-circle {
   color: rgb(150, 146, 146);
 } 
 
+.delete-buttons {
+  display: grid;
+  margin: 0 auto;
+  text-align: center;
+  grid-template-columns: 10% 1fr 1fr 10%;
+  max-width: 500px;
+}
+
+.delete-completed {
+  max-width: 200px;
+  margin: auto;
+  padding: 2px 10px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15px;
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  background-color: #6f778a;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+}
+
 .reset {
   max-width: 125px;
-  margin: 0 auto;
-  padding: 2px;
+  margin: auto;
+  padding: 2px 10px;
   justify-content: center;
   text-align: center;
   margin-top: 15px;
@@ -351,5 +347,3 @@ i.fa-check-circle {
 .noDisplay {
   display: none;
 }
-
-

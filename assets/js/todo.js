@@ -167,12 +167,13 @@ deleteC.addEventListener("click", deleteCompleted);
 function deleteCompleted() {
   let storedList = JSON.parse(localStorage.getItem("storedList"));
   storedList = storedList.filter(todo => !todo.completed);
-  console.log(storedList);
+  localStorage.clear();
+  list.innerHTML = '';
+  storedList.forEach(function(item) {
+    renderItem(item.todo);
+  });
   localStorage.setItem("storedList", JSON.stringify(storedList));
-  renderItem(storedList);
 }
-
-
 
 // DELETE ALL TASKS
 reset.addEventListener("click", deleteAll);

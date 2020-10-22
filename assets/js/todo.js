@@ -21,7 +21,7 @@ const deleteCompletedModal = new tingle.modal({
   cssClass: ['todo-modal'],
 });
 
-deleteCompletedModal.setContent('<h1>Do you want to delete completed todos?</h1>');
+deleteCompletedModal.setContent('<h1>Delete All Completed Tasks?</h1>');
 
 deleteCompletedModal.addFooterBtn('Yes', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function () {
   deleteCompleted();
@@ -38,7 +38,7 @@ const deleteAllModal = new tingle.modal({
   cssClass: ['todo-modal'],
 });
 
-deleteAllModal.setContent('<h1>Do you want to delete All todos?</h1>');
+deleteAllModal.setContent('<h1>Delete All Tasks?</h1>');
 
 deleteAllModal.addFooterBtn('Yes', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function () {
   deleteAll();

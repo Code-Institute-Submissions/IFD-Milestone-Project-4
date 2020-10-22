@@ -348,18 +348,42 @@ i.fa-check-circle {
   display: none;
 }
 
+div.tingle-modal {
+  background-color: #2c2c2ccb;
+}
+
 .todo-modal .tingle-modal-box {
   width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 1px 1px 4px rgba(44, 62, 80, 0.30);
+  
+}
+
+div.tingle-modal-box__content {
+  padding: 25px 10px;
 }
 
 .todo-modal h1 {
-  font-size: 16px;
+  font-size: 1.5rem;
+  padding-left: 0;
+  font-weight: normal;
+  letter-spacing: 1px;
 }
 
 .todo-modal .tingle-modal-box__footer {
   padding: 10px;
+  border-radius: 10px;
+  background-color: #edf0f1;
+  box-shadow: 1px 1px 4px rgba(44, 62, 80, 0.30);
 }
 
 .todo-modal .tingle-btn {
   padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 500px;
+  letter-spacing: 1px;
+  box-shadow: 1px 2px 4px rgba(44, 62, 80, 0.30);
 }

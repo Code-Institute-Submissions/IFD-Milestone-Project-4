@@ -1,4 +1,4 @@
-//.....TODO LIST.....
+//.....TASK TRACKER.....
 
 //..........(1) SELECTORS..........
 const input = document.querySelector("#input");
@@ -15,7 +15,9 @@ const linethrough = "completed linethrough";
 
 //..........(2) BULK DELETE MODALS..........
 
-// SET UP DELETE COMPLETE MODAL
+// ** Modals from tingle.robinparisi.com **
+
+// SET UP DELETE COMPLETED TASKS MODAL
 const deleteCompletedModal = new tingle.modal({
   footer: true,
   cssClass: ['todo-modal'],
@@ -32,7 +34,7 @@ deleteCompletedModal.addFooterBtn('No', 'tingle-btn tingle-btn--default tingle-b
   deleteCompletedModal.close();
 });
 
-// SET UP DELETE ALL MODAL
+// SET UP DELETE ALL TASKS MODAL
 const deleteAllModal = new tingle.modal({
   footer: true,
   cssClass: ['todo-modal'],

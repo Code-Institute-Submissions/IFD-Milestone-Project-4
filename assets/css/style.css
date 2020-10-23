@@ -387,3 +387,11 @@ div.tingle-modal-box__content {
   letter-spacing: 1px;
   box-shadow: 1px 2px 4px rgba(44, 62, 80, 0.30);
 }
+
+button.tingle-btn--primary {
+  background-color: #4d758f;
+}
+
+button.tingle-btn--default {
+  background-color: #8a6d70;
+}

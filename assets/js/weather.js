@@ -77,7 +77,7 @@ function displayResults() {
     // locationElement.innerHTML = `${weather.city}, ${weather.country}`;
     locationElement.innerHTML = `${weather.city}`; 
     temperatureElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-    minMaxElement.innerHTML = `H: ${weather.minTemp.value}°<span>C</span> / L: ${weather.maxTemp.value}°<span>C</span>`;
+    minMaxElement.innerHTML = `H: ${weather.maxTemp.value}°<span>C</span> / L: ${weather.minTemp.value}°<span>C</span>`;
     iconElement.innerHTML = `<img src="assets/icons/${weather.iconId}.png"/>`;
     // descElement.innerHTML = weather.description;
 }
@@ -100,11 +100,11 @@ temperatureElement.addEventListener("click", function() {
         maxFahrenheit = Math.floor(maxFahrenheit);
         
         temperatureElement.innerHTML = `${fahrenheit}°<span>F</span>`;
-        minMaxElement.innerHTML = `${minFahrenheit}°<span>F</span> / ${maxFahrenheit}°<span>F</span>`;
+        minMaxElement.innerHTML = `${maxFahrenheit}°<span>F</span> / ${minFahrenheit}°<span>F</span>`;
         weather.temperature.unit = "fahrenheit";
     } else {
         temperatureElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-        minMaxElement.innerHTML = `${weather.minTemp.value}°<span>C</span> / ${weather.maxTemp.value}°<span>C</span>`;
+        minMaxElement.innerHTML = `${weather.maxTemp.value}°<span>C</span> / ${weather.minTemp.value}°<span>C</span>`;
         weather.temperature.unit = "celsius";
     }
 });

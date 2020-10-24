@@ -349,7 +349,7 @@ i.fa-check-circle {
   flex-wrap: wrap;
   position: relative;
   justify-content: space-around;
-  margin: 0 auto;
+  margin: 0 auto 25px auto;
   max-width: 500px;
 }
 

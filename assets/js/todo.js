@@ -23,7 +23,7 @@ const deleteCompletedModal = new tingle.modal({
   cssClass: ['todo-modal'],
 });
 
-deleteCompletedModal.setContent('<h1>Delete All Completed Tasks?</h1>');
+deleteCompletedModal.setContent('<h1>Delete Completed Tasks?</h1>');
 
 deleteCompletedModal.addFooterBtn('Yes', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function () {
   deleteCompleted();

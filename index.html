@@ -10,20 +10,22 @@
     <title>Task Tracker</title>
 </head>
 <body>
-  <div class="forecast-container">
-    <div class="weather-container">
+  <div class="outlook-container">
+    <div class="outlook-content-container">
         <div class="date"></div>
         <div class="location">
           <p>-</p>
         </div>
         <div class="error-notification"></div>
-        <div class="weather-icon"></div>
-        <div class="temp-container">
-            <div class="temperature">
-                <p>- °<span>C</span></p>
-            </div>
-            <div class="min-max-temp">
-                <p>- °<span>C</span> / - °<span>C</span></p>
+        <div class="weather-container">
+            <div class="weather-icon"></div>
+            <div class="temp-container">
+                <div class="temperature">
+                    <p>- °<span>C</span></p>
+                </div>
+                <div class="min-max-temp">
+                    <p>- °<span>C</span> / - °<span>C</span></p>
+                </div>
             </div>
         </div>
     </div>
@@ -32,7 +34,7 @@
     <div class="todo-container">
         <header>
             <input type="text" id="input" placeholder= "Add New Todo" autocomplete="off">
-            <button class="btn" id="addItem">
+            <button class="input-btn" id="addItem">
                 <i class="fas fa-plus"></i>
             </button>
         </header>
@@ -42,10 +44,10 @@
     </div>
     <div class="delete-buttons">
         <div class="delete-completed">
-            <p>Delete Completed Items</p>
+            <p>Delete Completed Tasks</p>
         </div>
         <div class="reset">
-            <p>Delete All Items</p>
+            <p>Delete All Tasks</p>
         </div>
     </div>
 

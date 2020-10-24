@@ -8,7 +8,6 @@ const notificationElement = document.querySelector(".error-notification");
 const temperatureElement = document.querySelector(".temperature p");
 const minMaxElement = document.querySelector(".min-max-temp p");
 const iconElement = document.querySelector(".weather-icon");
-// const descElement = document.querySelector(".weather-description p");
 
 
 // WEATHER DATA OBJECT
@@ -17,10 +16,10 @@ weather.temperature = {
     unit: "celsius"
 }
 weather.maxTemp = {
-  unit: "celsius"
+    unit: "celsius"
 }
 weather.minTemp = {
-  unit: "celsius"
+    unit: "celsius"
 }
 
 // API KEY

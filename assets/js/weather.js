@@ -45,6 +45,7 @@ function setPosition(position) {
 function showError(error) {
     notificationElement.style.display = "block";
     notificationElement.innerHTML = `<p>${error.message}</p>`;
+    locationElement.parentNode.classList.add("noDisplay");
 }
 
 // GET RESULTS FROM API PROVIDER
@@ -62,7 +63,6 @@ function getResults(latitude, longitude) {
             weather.temperature.value = Math.floor(data.main.temp);
             weather.minTemp.value = Math.floor(data.main.temp_min);
             weather.maxTemp.value = Math.floor(data.main.temp_max);
-            // weather.description = data.weather[0].description;
             weather.iconId = data.weather[0].icon;
             
         })
@@ -78,7 +78,6 @@ function displayResults() {
     temperatureElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     minMaxElement.innerHTML = `H: ${weather.maxTemp.value}°<span>C</span> / L: ${weather.minTemp.value}°<span>C</span>`;
     iconElement.innerHTML = `<img src="assets/icons/${weather.iconId}.png"/>`;
-    // descElement.innerHTML = weather.description;
 }
 
 // CONVERT CELSIUS TO FAHRENHEIT

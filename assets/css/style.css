@@ -57,6 +57,8 @@ body {
 }
 
 .location p {
+  display: flex;
+  align-items: center;
   margin: 0;
   height: 50px;
   color: #293251;
@@ -64,21 +66,23 @@ body {
   font-weight: 400;
   letter-spacing: 1.0px;
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
 }
 
 .error-notification {
-  background-color: #f8d7da;
+  display: flex;
+  height: 50px;
   display: none;
 }
 
 .error-notification p {
-  color: #721c24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
   font-size: 1.0rem;
-  margin: 0;
-  text-align: center;
-  padding: 5px 0;
+  padding: 0 8px;
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
 .weather-container {

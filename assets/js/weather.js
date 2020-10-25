@@ -31,6 +31,7 @@ if("geolocation" in navigator) {
 } else {
     notificationElement.style.display = "block";
     notificationElement.innerHTML = "<p>Geolocation not supported by browser</p>";
+    minMaxElement.parentNode.classList.add("noDisplay");
 }
 
 // SET USER'S POSITION
@@ -46,6 +47,8 @@ function showError(error) {
     notificationElement.style.display = "block";
     notificationElement.innerHTML = `<p>${error.message}</p>`;
     locationElement.parentNode.classList.add("noDisplay");
+    minMaxElement.parentNode.classList.add("noDisplay");
+    temperatureElement.parentNode.style.cssText = "height: 50px; margin-left: 30px; display: flex; align-items: center";
 }
 
 // GET RESULTS FROM API PROVIDER

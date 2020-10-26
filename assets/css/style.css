@@ -22,7 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 0 auto;
+  margin: 5px auto 0 auto;
   width: 98vw;
   max-width: 500px;
   padding: 8px 12px;
@@ -128,13 +128,13 @@ body {
   }
 
   .date {
-    padding-left: 7px;
+    padding-left: 4px;
+    margin-right: 5px;
     letter-spacing: 0;
   }
 
   .location {
     letter-spacing: 0.25px;
-    margin-left: 3px;
   }
 
   .error-notification p {
@@ -142,7 +142,7 @@ body {
   }
   
   .temp-container {
-    padding-right: 7px;
+    padding-right: 4px;
   }
 
   div.min-max-temp {

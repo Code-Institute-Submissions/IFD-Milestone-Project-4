@@ -44,7 +44,7 @@ The purpose of this application is to provide the user with a simple yet functio
 
 
 ### Wireframes
-
+Wireframes for this website can be accessed in my wireframes folder within this github repository - [my wireframes](XXXXXXXX)
 
 
 
@@ -53,12 +53,20 @@ _____
 ## Features
 
 ### Existing features
-
-
-
+* **Current weather overview** - XXX
+* **Add task item** - XXXX
+* **Individual item features**
+  * *Mark item complete* - 
+  * *Edit item* - 
+  * *Delete item* - 
+* **Save to local storage** - 
+* **Delete all items marked complete** - 
+* **Delete all items** - 
 
 ### Future features
-
+* **Multiple task lists** - 
+* **Integrated weather forecast** - to show weather outlook for a certain number of hours and/or days to come.
+* **Task reminder alerts**
 
 _____
 
@@ -130,6 +138,7 @@ To clone this project from GitHub:
 4. Open your terminal.
 5. Navigate to the working directory where the cloned repository will be placed.
 6. In the comman line type `git clone` and then paste the URL (copied in Step 3) immediately after.
+`git clone XXXXXXXX`
 7. Press **Enter**. Your local clone will be created.
 
 For more information or guidance, please see the relevant help section [Cloning a Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)

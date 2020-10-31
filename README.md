@@ -2,9 +2,6 @@
 
 **Live application demo can be found [**here**](https://michaelphann.github.io/IFD-Milestone-Project/)
 
-![](testing/responsive.PNG)
-_____
-
 # Table of Contents
 
 * [UX](#UX)
@@ -32,56 +29,56 @@ _____
 
 ### Application overview
 
-The purpose of this application is to provide the user with a simple yet functional everyday organisational tool. It is easy-access and versatile, acting as a user assistant for a variety of purposes, ranging from a daily task tracker to a paper-free shopping list to a handy digital jotter to quickly note something you don't want to forget. The outlook view enables the user to keep track of the weather in their area, potentially helping them make smarter decisions if they need to venture outside.
+The purpose of this application is to provide the user with a simple yet functional everyday organisational tool. It is easy-access and versatile, acting as a user assistant for a variety of purposes, ranging from a daily task tracker to a paper-free shopping list to a handy digital jotter. The outlook view enables the user to keep track of the weather in their area, potentially helping them make smarter decisions if they need to venture outside.
 
 ### User stories
-
+* As an everyday user, I want an application
+* 
 
 
 ### Design choices
-
-
-
+* A minimalist user interface that enables quick access and straight forward functionality.
+* Distinct input field and mobile-friendly large "ADD" button.
+* Compact, clear date/weather banner to provide a simply summary for the user.
+* Complementary colours in the body of the app to ensure ease of reading of the user across device type.
+* "Quicksand" font used throughout the app. It is an engaging, easy-to-read and versatile font. A variety of letter spacing used throughout the app, across device type.
 
 ### Wireframes
 Wireframes for this website can be accessed in my wireframes folder within this github repository - [my wireframes](XXXXXXXX)
 
 
-
-
-
 ## Features
 
 ### Existing features
-* **Current date & weather overview** - a summary header/banner that provides the user with an at-a-glance view of the date, user location and current weather. Location and current weather view are dependent on both geolocation being supported by the users browser and the user allowing geolocation access.
-* **Add task item** - an input feature to add individual task items. Items can be added by both return key, if being used on desktop, or via a mobile/tablet-friendly *Add Item* button.
-* **Individual item features**
-  * *Mark item complete* - 
-  * *Edit item* - 
-  * *Delete item* - 
+* **Current date & weather overview** - a summary banner that provides the user with an at-a-glance view of the date, user location and current weather. Location and current weather view are dependent on both geolocation being supported by the user's browser and the user allowing geolocation access.
+* **Add task item** - an input feature to add individual task items. Items can be added by both return key, if being used on desktop or tablet, or via a mobile/tablet-friendly *Add Item* button.
 * **Save to local storage** - 
-* **Delete all items marked complete** - 
-* **Delete all items** - 
+* **Individual item features**
+  * *Mark item complete* - the ability to mark a task complete where it will appear with a green check box and text scored through. Items marked as complete will be updated in local storage.
+  * *Edit item* - the ability to edit an individual task, whether to correct or add to it, without having to delete. Revised task wording will be updated in local storage.
+  * *Delete item* - the ability to entirely delete an individual task and remove it from both the rendered list and local storage.
+* **Delete all items marked complete** - a button that enables the user to delete all items that have been marked complete, so as to leave the list with only tasks not yet marked complete. Local storage will automatically refresh to reflect these items having been deleted. Feature includes a confirmation modal asking if the user is sure they wish to delete all completed items.
+* **Delete all items** - a button that enables the user to delete all items in the current task list. Local storage will automatically refresh to reflect this. Feature includes a confirmation modal asking if the user is sure they wish to delete all items.
 
 ### Future features
-* **Multiple task lists** - 
+* **Multiple task lists** - the ability to create and retain a number of separate task lists.
 * **Integrated weather forecast** - to show weather outlook for a certain number of hours and/or days to come.
-* **Task reminder alerts**
+* **Task reminder alerts** - the ability to set a reminder on a particular task and send a text or email alert at a specified time.
 
 _____
 
 ## Technologies Used
 
-* [HTML5](https://en.wikipedia.org/wiki/HTML5) - this project used HTML5 to build the structure of this application.
-* [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - this project used CSS3 for styling of the application.
-* [JavaScript](https://www.javascript.com/) - this project used JavaScript to provide application interactivity.
-* [Google Fonts](https://fonts.google.com/) - to style the application text fonts.
-* [Font Awesome](https://fontawesome.com/) - to style the application icons.
-* [MODAL API]
-
-* [VS Code](https://code.visualstudio.com/) - this project used Visual Studio Code 2 source code editor for local development.
-* [GIT](https://git-scm.com/) - this project used GitPod for version control.
-* [GitHub](https://github.com/) - this project used GitHub for hosting the repository and the live website preview.
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) - used to build the structure of this application.
+* [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - used for styling of the application.
+* [JavaScript](https://www.javascript.com/) - used to provide application interactivity.
+* [Google Fonts](https://fonts.google.com/) - used to style the application text fonts.
+* [Font Awesome](https://fontawesome.com/) - used to style the application icons.
+* [Open Weather API](https://openweathermap.org/api) - API plugin to access up-to-date weather data.
+* [Tingle.js](https://tingle.robinparisi.com/) - API plugin modal template.
+* [VS Code](https://code.visualstudio.com/) - used Visual Studio Code 2 source code editor for local development.
+* [GIT](https://git-scm.com/) - used GitPod for version control.
+* [GitHub](https://github.com/) - used GitHub for hosting the repository and the live website preview.
 
 ### Testing tools
 

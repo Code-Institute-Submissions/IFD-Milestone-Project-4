@@ -1,8 +1,8 @@
 // Weather app built using Open Weather Api
 
-//.....(1) WEATHER......
+//.....(1) Weather......
 
-// SELECTORS
+// Selectors
 const locationElement = document.querySelector(".location p");
 const notificationElement = document.querySelector(".error-notification");
 const temperatureElement = document.querySelector(".temperature p");
@@ -10,7 +10,7 @@ const minMaxElement = document.querySelector(".min-max-temp p");
 const iconElement = document.querySelector(".weather-icon");
 
 
-// WEATHER DATA OBJECT
+// Weather data object
 const weather = {};
 weather.temperature = {
     unit: "celsius"
@@ -22,10 +22,10 @@ weather.minTemp = {
     unit: "celsius"
 }
 
-// API KEY
+// API key
 const key = "7050354d2e4e384aee208eb160eea894";
 
-// CHECK IF BROWSER SUPPORTS GEOLOCATION
+// Check if browser supports geolocation
 if("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(setPosition, showError);
 } else {
@@ -34,7 +34,7 @@ if("geolocation" in navigator) {
     minMaxElement.parentNode.classList.add("noDisplay");
 }
 
-// SET USER'S POSITION
+// Set user's position
 function setPosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
@@ -42,7 +42,7 @@ function setPosition(position) {
     getResults(latitude, longitude);
 }
 
-// SHOW ERROR WHEN THERE IS AN ISSUE WITH GEOLOCATION SERVICE
+// Show error when there is an issue with geolocation
 function showError(error) {
     notificationElement.style.display = "block";
     notificationElement.innerHTML = `<p>${error.message}</p>`;
@@ -51,7 +51,7 @@ function showError(error) {
     temperatureElement.parentNode.style.cssText = "height: 50px; margin-left: 30px; display: flex; align-items: center";
 }
 
-// GET RESULTS FROM API PROVIDER
+// Get results from API provider
 function getResults(latitude, longitude) {
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${key}`;
     
@@ -74,7 +74,7 @@ function getResults(latitude, longitude) {
         });
 }
 
-// DISPLAY RESULTS
+// Display Results
 function displayResults() {
     // locationElement.innerHTML = `${weather.city}, ${weather.country}`;
     locationElement.innerHTML = `${weather.city}`; 
@@ -83,12 +83,12 @@ function displayResults() {
     iconElement.innerHTML = `<img src="assets/icons/${weather.iconId}.png"/>`;
 }
 
-// CONVERT CELSIUS TO FAHRENHEIT
+// Convert Celsius to Fahrenheit
 function celsiusToFahrenheit(temperature) {
     return (temperature * 9/5) + 32;
 }
 
-// WHEN THE USER CLICKS ON THE TEMP ELEMENT
+// When the user clicks on the temperature element
 temperatureElement.addEventListener("click", function() {
     if(weather.temperature.value === undefined) return;
     
@@ -110,7 +110,7 @@ temperatureElement.addEventListener("click", function() {
     }
 });
 
-//.....(2) DATE......
+//.....(2) Date......
 const dateElement = document.querySelector(".date");
 
 // Generate today's Date

@@ -104,11 +104,11 @@ _____
 
 This project was developed using VS Code, with the repository stored on GitHub.
 
-* The GitHub repository is [here](XXXXXXXX)
-* The website is live [here](XXXXXXXX)
+* The GitHub repository is [here](https://github.com/MichaelpHann/IFD-Milestone-Project)
+* The website is live [here](https://michaelphann.github.io/IFD-Milestone-Project/)
 
 #### This application was deployed on GitHub Pages by undertaking the following steps:
-1. On Github, navigate to the repository - https://github.com/MichaelpHann/UCFD-Milestone-Project
+1. On Github, navigate to the repository - https://github.com/MichaelpHann/IFD-Milestone-Project
 2. In the GitHub header/navigation ribbon, select the **Setting** option.
 3. Scroll to the **GitHub Pages** sub-section.
 4. Under **Source** click the drop-down menu labelled **None** and select **Master Branch**.
@@ -124,13 +124,13 @@ You must first ensure:
 
 To clone this project from GitHub:
 
-1. On GitHub, navigate to the project repository [here](XXXXXXXX).
+1. On GitHub, navigate to the project repository [here](https://github.com/MichaelpHann/IFD-Milestone-Project).
 2. Under the repository name, select the green **Clone or download** dropdown button.
 3. Highlight the URL provided or click the button to copy the URL.
 4. Open your terminal.
 5. Navigate to the working directory where the cloned repository will be placed.
 6. In the comman line type `git clone` and then paste the URL (copied in Step 3) immediately after.
-`git clone XXXXXXXX`
+`git clone https://github.com/MichaelpHann/IFD-Milestone-Project.git`
 7. Press **Enter**. Your local clone will be created.
 
 For more information or guidance, please see the relevant help section [Cloning a Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)

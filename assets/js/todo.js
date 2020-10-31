@@ -1,10 +1,9 @@
 //.....Task Tracker.....
 
 //..........(1) Selectors..........
-const input = document.querySelector("#input");
-const todoBtn = document.querySelector("#addItem");
-const list = document.querySelector("#list");
-const edit = document.querySelector(".edit");
+const taskInput = document.querySelector("#taskInput");
+const taskBtn = document.querySelector("#addTask");
+const taskList = document.querySelector("#taskList");
 const reset = document.querySelector(".reset");
 const delCompleted = document.querySelector(".delete-completed");
 
@@ -55,7 +54,7 @@ deleteAllModal.addFooterBtn('No', 'tingle-btn tingle-btn--default tingle-btn--pu
 //..........(3) Functions..........
 
 // Render stored task items (if any) when page loads
-function getToDo () {
+function renderExistingTasks () {
   // Check if tasks already stored
   if(localStorage.getItem("storedList") === null) {
     return;
@@ -64,12 +63,12 @@ function getToDo () {
   let storedList;
   //Recall items from local storage
   storedList = JSON.parse(localStorage.getItem("storedList"));
-  storedList.forEach(item => renderItem(item.todo, item.completed));
+  storedList.forEach(item => renderNewTask(item.todo, item.completed));
 }
 
 // Add Task
 // (a) If input field contains value and PLUS button is pressed
-todoBtn.addEventListener("click", function() {
+taskBtn.addEventListener("click", function() {
         addItem();
 });
 
@@ -81,35 +80,35 @@ document.addEventListener("keypress", function(event) {
 });
 
 function addItem() {
-  let todo = input.value;
+  let todo = taskInput.value;
   if(todo) {
-    renderItem(todo);
-    saveToDo(todo);
-    input.value="";
+    renderNewTask(todo);
+    saveTask(todo);
+    taskInput.value="";
   }
 }
 
 // Render Task
-function renderItem(todo, completed) {
+function renderNewTask(todo, completed) {
   const done = completed ? check : uncheck;
   const line = completed ? linethrough : "";
   
-  const item = `<li>
-                    <span contenteditable="false" class="text ${line}">${todo}</span>
+  const item = `<li class="taskItem">
+                    <span contenteditable="false" class="taskContent text ${line}">${todo}</span>
                     <i class="check far ${done}"></i>
                     <i class="trash fas fa-trash-alt"></i>
-                    <i class="edit far fa-edit"></i>
+                    <i class="editTask far fa-edit"></i>
                     <i class="save far fa-save"></i>
                 </li>`
 
   const position = "beforeend";
-  list.insertAdjacentHTML(position, item);
+  taskList.insertAdjacentHTML(position, item);
   reset.classList.add("display-btn");
   delCompleted.classList.add("display-btn");
 }
 
 // Save tasks to Local Storage
-function saveToDo (todo) {
+function saveTask (todo) {
   const todoItems = document.querySelectorAll("li");
 
   const storedList = []
@@ -123,24 +122,24 @@ function saveToDo (todo) {
 }
 
 // Delete Task
-function deleteToDo(event) {
+function deleteTask(event) {
     let element = event.target;
     if(element.classList.contains("trash")) {
       element.parentElement.remove();
-      saveToDo();
+      saveTask();
     }
 }
 
 // Edit Task
-function editTodo(event) {
+function editTask(event) {
     let element = event.target;
     let span = element.parentNode.querySelector(".text");
     let save = element.parentNode.querySelector(".save");
     let check = element.parentNode.querySelector(".check");
-    let edit = element.parentNode.querySelector(".edit");
+    let edit = element.parentNode.querySelector(".editTask");
     let trash = element.parentNode.querySelector(".trash");
 
-    if(element.classList.contains("edit")) {
+    if(element.classList.contains("editTask")) {
         span.contentEditable = true;
         save.classList.add("display-save");
         check.classList.add("noDisplay");
@@ -156,7 +155,7 @@ function editTodo(event) {
                 edit.classList.remove("noDisplay");
                 trash.classList.remove("noDisplay");
             }
-            saveToDo();
+            saveTask();
         });
 
         save.addEventListener("click", function(event) {
@@ -169,20 +168,20 @@ function editTodo(event) {
                 edit.classList.remove("noDisplay");
                 trash.classList.remove("noDisplay");
             }
-            saveToDo();
+            saveTask();
         });
     }
 }
 
 // Complete Task
-function completeToDo(event) {
+function completeTask(event) {
   let element = event.target;
   if(element.classList.contains("check")) {
     element.classList.toggle("fa-circle");
     element.classList.toggle("fa-check-circle");
     element.parentNode.querySelector(".text").classList.toggle("completed");
     element.parentNode.querySelector(".text").classList.toggle("linethrough");
-    saveToDo();
+    saveTask();
   }
 }
 
@@ -191,7 +190,7 @@ function deleteCompleted() {
   let storedList = JSON.parse(localStorage.getItem("storedList"));
   storedList = storedList.filter(todo => !todo.completed);
   localStorage.clear();
-  list.innerHTML = '';
+  taskList.innerHTML = '';
   storedList.forEach(item => renderItem(item.todo));
   localStorage.setItem("storedList", JSON.stringify(storedList));
 }
@@ -206,18 +205,18 @@ function deleteAll() {
 //..........(4) Event Listeners..........
 
 // Render stored task items (if any) when page loads
-document.addEventListener("DOMContentLoaded", getToDo);
+document.addEventListener("DOMContentLoaded", renderExistingTasks);
 
 // Delete Task
-list.addEventListener("click", deleteToDo);
+taskList.addEventListener("click", deleteTask);
 
 // Edit Task
-list.addEventListener("click", editTodo);
+taskList.addEventListener("click", editTask);
 
 // Complete Task
-list.addEventListener("click", completeToDo);
+taskList.addEventListener("click", completeTask);
 
-// Delete Completes Tasks
+// Delete Completed Tasks
 delCompleted.addEventListener("click", function() {
   deleteCompletedModal.open();
 });

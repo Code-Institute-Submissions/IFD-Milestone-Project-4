@@ -185,7 +185,7 @@ header {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-#input {
+#taskInput {
   font-size: 1.1rem;
   font-family: Quicksand, sans-serif;
   color: #fff;
@@ -201,16 +201,16 @@ header {
   border-radius: 25px;
 }
 
-#input::placeholder {
+#taskInput::placeholder {
   color: #fff;
 }
 
-#input:focus {
+#taskInput:focus {
   background-color: #8ca9b1;
   outline: none;
 }
 
-.input-btn {
+.task-input-btn {
   position: absolute;
   float: right;
   height: 50px;
@@ -227,15 +227,19 @@ header {
   border-radius: 25px;
 }
 
-ul {
+.content {
+}
+
+#taskList {
   width: 100%;
   float: left;
   list-style: none;
   border-radius: 0 0 10px 10px;
   padding: 0 15px;
+
 }
 
-li {
+.taskItem {
   width: 100%;
   min-height: 40px;
   line-height: 40px;
@@ -247,12 +251,12 @@ li {
   box-shadow: 0px 1px 3px rgba(44, 62, 80, 0.30);
 }
 
-span {
+.taskContent {
   position: relative;
   z-index: 0;
 }
 
-span.text:focus {
+.taskContent.text:focus {
   display: inline-block;
   border: 1px solid #e5e5e5;
   box-shadow: 1px 1px 1px rgba(44, 62, 80, 0.10);
@@ -282,7 +286,7 @@ span.text:focus {
   cursor: pointer;
 }
 
-.edit {
+.editTask {
   min-height: 40px;
   line-height: 40px;
   text-align: center;
@@ -297,8 +301,8 @@ span.text:focus {
   cursor: pointer;
 }
 
-li:hover .trash,
-li:hover .edit {
+.taskItem:hover .trash,
+.taskItem:hover .editTask {
   width: 30px;
   opacity: 1.0;
   

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/tingle/tingle.min.css">
-    <script src="assets/tingle/tingle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.css" integrity="sha512-MoFCK5xaDtWvQZMGG6ZDkkLnIG7sUe3PYpv2nKJh3TP5Ky7G8f82Umpa972Oj6iPmW6LMEFvrR9sDL7p0kTTNw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin="anonymous"></script>
     <title>Task Tracker</title>
 </head>
 <body>
@@ -35,13 +35,13 @@
     
     <div class="todo-container">
         <header>
-            <input type="text" id="input" placeholder= "Add New Todo" autocomplete="off">
-            <button class="input-btn" id="addItem">
+            <input type="text" id="taskInput" placeholder= "Add New Task" autocomplete="off">
+            <button class="task-input-btn" id="addTask">
                 <i class="fas fa-plus"></i>
             </button>
         </header>
         <div class="content">
-            <ul id="list"></ul>
+            <ul id="taskList"></ul>
         </div>
     </div>
     <div class="delete-buttons">

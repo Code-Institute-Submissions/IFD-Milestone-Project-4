@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:300,400,500,700|Quicksand:300,400,500,600&display=swap');
 
 
-/* BODY STYLING */
+/* Body Styling */
 
 *, *::before, *::after {
   margin: 0;
@@ -16,7 +16,7 @@ body {
   padding-top: 50px;
 }
 
-/* WEATHER FORECAST */
+/* Weather Forecast */
 
 .outlook-container {  
   display: flex;
@@ -162,7 +162,7 @@ body {
 }
 
 
-/* TASK TRACKER */
+/* Task Tracker */
 
 .todo-container {
   display: flex;
@@ -310,7 +310,6 @@ li:hover .edit {
   font-size: 20px;
   float: right;
   position: relative;
-  /* z-index: 2; */
   text-align: center;
   line-height: 40px;
   margin-right: 10px;
@@ -354,7 +353,7 @@ i.fa-check-circle {
   }
 }
 
-/* BULK DELETE BUTTONS */
+/* Bulk Delete Buttons */
 
 .delete-buttons {
   display: flex;
@@ -367,7 +366,6 @@ i.fa-check-circle {
 
 .delete-completed {
   width: 200px;
-  /* margin: 0 auto; */
   line-height: 25px;
   padding: 2px 10px;
   text-align: center;
@@ -385,7 +383,6 @@ i.fa-check-circle {
 .reset {
   width: 200px;
   line-height: 25px;
-  /* margin: 0 auto; */
   padding: 2px 10px;
   text-align: center;
   margin-top: 15px;
@@ -407,7 +404,7 @@ i.fa-check-circle {
   display: none;
 }
 
-/* DELETE BUTTON MODALS */
+/* Delete Button Modals */
 
 div.tingle-modal {
   background-color: #2c2c2ccb;
@@ -462,7 +459,6 @@ button.tingle-btn--primary {
 
 button.tingle-btn--default {
   background-color: #8a6d70;
-  /* margin: 0; */
 }
 
 @media (max-width: 540px) {

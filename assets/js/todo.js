@@ -1,23 +1,23 @@
-//.....TASK TRACKER.....
+//.....Task Tracker.....
 
-//..........(1) SELECTORS..........
+//..........(1) Selectors..........
 const input = document.querySelector("#input");
 const todoBtn = document.querySelector("#addItem");
 const list = document.querySelector("#list");
 const edit = document.querySelector(".edit");
 const reset = document.querySelector(".reset");
-const deleteC = document.querySelector(".delete-completed");
+const delCompleted = document.querySelector(".delete-completed");
 
 const check = "fa-check-circle";
 const uncheck = "fa-circle";
 const linethrough = "completed linethrough";
 
 
-//..........(2) BULK DELETE MODALS..........
+//..........(2) Bulk Delete Modals..........
 
 // ** Modals from tingle.robinparisi.com **
 
-// SET UP DELETE COMPLETED TASKS MODAL
+// Set up deleted completed tasks modal
 const deleteCompletedModal = new tingle.modal({
   footer: true,
   cssClass: ['todo-modal'],
@@ -34,7 +34,7 @@ deleteCompletedModal.addFooterBtn('No', 'tingle-btn tingle-btn--default tingle-b
   deleteCompletedModal.close();
 });
 
-// SET UP DELETE ALL TASKS MODAL
+// Set up delete all tasks modal
 const deleteAllModal = new tingle.modal({
   footer: true,
   cssClass: ['todo-modal'],
@@ -52,9 +52,9 @@ deleteAllModal.addFooterBtn('No', 'tingle-btn tingle-btn--default tingle-btn--pu
 });
 
 
-//..........(3) FUNCTIONS..........
+//..........(3) Functions..........
 
-// RENDER STORED TASK ITEMS (IF ANY) WHEN PAGE LOADS
+// Render stored task items (if any) when page loads
 function getToDo () {
   // Check if tasks already stored
   if(localStorage.getItem("storedList") === null) {
@@ -64,36 +64,32 @@ function getToDo () {
   let storedList;
   //Recall items from local storage
   storedList = JSON.parse(localStorage.getItem("storedList"));
-  storedList.forEach(function(item) {
-      renderItem(item.todo, item.completed);
-  });
+  storedList.forEach(item => renderItem(item.todo, item.completed));
 }
 
-// ADD TASK
-// (a) If input contains value and PLUS button pressed
+// Add Task
+// (a) If input field contains value and PLUS button is pressed
 todoBtn.addEventListener("click", function() {
-    let todo = input.value;
-    if(todo) {
-        addItem(todo);
-    }
+        addItem();
 });
 
-// (b) If input contains value and return key (13) pressed
+// (b) If input field contains value and return key (13) pressed
 document.addEventListener("keypress", function(event) {
     if(event.which === 13) {
-        let todo = input.value;
-        if(todo) {
-            addItem(todo);
-        }
+            addItem();
     }
 });
 
-function addItem(todo) {
-  renderItem(todo);
-  input.value="";
+function addItem() {
+  let todo = input.value;
+  if(todo) {
+    renderItem(todo);
+    saveToDo(todo);
+    input.value="";
+  }
 }
 
-// RENDER TASK
+// Render Task
 function renderItem(todo, completed) {
   const done = completed ? check : uncheck;
   const line = completed ? linethrough : "";
@@ -109,37 +105,33 @@ function renderItem(todo, completed) {
   const position = "beforeend";
   list.insertAdjacentHTML(position, item);
   reset.classList.add("display-btn");
-  deleteC.classList.add("display-btn");
-  saveToDo();
+  delCompleted.classList.add("display-btn");
 }
 
-// SAVE TASKS TO LOCAL STORAGE
+// Save tasks to Local Storage
 function saveToDo (todo) {
   const todoItems = document.querySelectorAll("li");
-  const item = document.querySelector("li");
 
-  const storedList = [];
+  const storedList = []
 
-  todoItems.forEach(function(item) {
-    storedList.push({
+  todoItems.forEach(item => storedList.push({
       todo: item.innerText,
-      completed: item.querySelector("span").classList.contains("completed"),
-    });
-  });
+      completed: item.querySelector("span").classList.contains("completed")
+    })
+  );
   localStorage.setItem("storedList", JSON.stringify(storedList));
 }
 
-// DELETE TASK
+// Delete Task
 function deleteToDo(event) {
     let element = event.target;
-    const storedList = getToDo;
     if(element.classList.contains("trash")) {
       element.parentElement.remove();
       saveToDo();
     }
 }
 
-// EDIT TASK
+// Edit Task
 function editTodo(event) {
     let element = event.target;
     let span = element.parentNode.querySelector(".text");
@@ -182,7 +174,7 @@ function editTodo(event) {
     }
 }
 
-// COMPLETE TASK
+// Complete Task
 function completeToDo(event) {
   let element = event.target;
   if(element.classList.contains("check")) {
@@ -194,45 +186,43 @@ function completeToDo(event) {
   }
 }
 
-// DELETE COMPLETED TASKS
+// Delete Completed Tasks
 function deleteCompleted() {
   let storedList = JSON.parse(localStorage.getItem("storedList"));
   storedList = storedList.filter(todo => !todo.completed);
   localStorage.clear();
   list.innerHTML = '';
-  storedList.forEach(function(item) {
-    renderItem(item.todo);
-  });
+  storedList.forEach(item => renderItem(item.todo));
   localStorage.setItem("storedList", JSON.stringify(storedList));
 }
 
-// DELETE ALL TASKS
+// Delete All Tasks
 function deleteAll() {
     localStorage.clear();
     location.reload();
 }
 
 
-//..........(4) EVENT LISTENERS..........
+//..........(4) Event Listeners..........
 
-// RENDER STORED TASK ITEMS (IF ANY) WHEN PAGE LOADS
+// Render stored task items (if any) when page loads
 document.addEventListener("DOMContentLoaded", getToDo);
 
-// DELETE TASK
+// Delete Task
 list.addEventListener("click", deleteToDo);
 
-// EDIT TASK
+// Edit Task
 list.addEventListener("click", editTodo);
 
-// COMPLETE TASK
+// Complete Task
 list.addEventListener("click", completeToDo);
 
-// DELETE COMPLETED TASKS
-deleteC.addEventListener("click", function() {
+// Delete Completes Tasks
+delCompleted.addEventListener("click", function() {
   deleteCompletedModal.open();
 });
 
-// DELETE ALL TASKS
+// Delete All Tasks
 reset.addEventListener("click", function() {
   deleteAllModal.open();
 });

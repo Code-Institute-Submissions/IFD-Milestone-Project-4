@@ -191,7 +191,7 @@ function deleteCompleted() {
   storedList = storedList.filter(todo => !todo.completed);
   localStorage.clear();
   taskList.innerHTML = '';
-  storedList.forEach(item => renderItem(item.todo));
+  storedList.forEach(item => renderNewTask(item.todo));
   localStorage.setItem("storedList", JSON.stringify(storedList));
 }
 

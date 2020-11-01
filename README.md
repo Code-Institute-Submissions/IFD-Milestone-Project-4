@@ -19,7 +19,7 @@ Live application demo can be found [**here**](https://michaelphann.github.io/IFD
   * [Bugs](#Bugs)
 * [Deployment](#Deployment)
 * [Credits](#Credits)
-  * [Content & Media](#Content-&-Media)
+  * [Content sources](#Content-sources)
   * [Acknowledgements](#Acknowledgements)
 
 
@@ -192,11 +192,11 @@ To clone this project from GitHub:
   `git clone https://github.com/MichaelpHann/IFD-Milestone-Project.git`
 7. Press **Enter**. Your local clone will be created.
 
-For more information or guidance, please see the relevant help section [Cloning a Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+For more information or guidance, please see the relevant help section [Cloning a Repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
 
 ## Credits
 
-### Content / Media
+### Content sources
 * The weather icons used for this app were created by the graphic designer, Ashley Jager. The link to her repo is [here](https://github.com/manifestinteractive/weather-underground-icons).
 * The weather API provider is [Open Weather API](http://www.OpenWeatherMap.org).
 

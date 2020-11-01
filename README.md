@@ -2,7 +2,7 @@
 
 Live application demo can be found [**here**](https://michaelphann.github.io/IFD-Milestone-Project/)
 
-# Table of Contents
+## Table of Contents
 
 * [UX](#UX)
   * [Application overview](#Application-overview)
@@ -90,7 +90,8 @@ _____
 
 ## Testing
 
-###User Testing
+
+### User Testing
 User testing was the primary method of testing adoped during this project. A number of people were asked to test the application, with a variety of devices used (both mobile and tablet) during the latter stages of the project. This testing and feedback was incredibly helpful in debugged and finalising design/format.
 
 ### Testing - implemented features
@@ -99,53 +100,53 @@ User testing was the primary method of testing adoped during this project. A num
   1. 
 
 2. Input task field
-  1. Click on input field.
-  2. Without typing any text or pressing the space bar, click the *ADD* button. There should be no response, with no task added to the list.
-  3. Without typing any text or pressing the space bar, press the return key. There should be no response, with no task added to the list.
-  4. Type an example task in the input field, click the *ADD* button. The example task should render below the input field to the task list. The example task text should clear from the input field with the placeholder "Add New Task" text returning.
-  5. Type another example task in the input field, press the truen key. The example task should render below the input field to the task list. The example task text should clear from the input field with the placeholder "Add New Task" text returning.
+    1. Click on input field.
+    2. Without typing any text or pressing the space bar, click the *ADD* button. There should be no response, with no task added to the list.
+    3. Without typing any text or pressing the space bar, press the return key. There should be no response, with no task added to the list.
+    4. Type an example task in the input field, click the *ADD* button. The example task should render below the input field to the task list. The example task text should clear from the input field with the placeholder "Add New Task" text returning.
+    5. Type another example task in the input field, press the truen key. The example task should render below the input field to the task list. The example task text should clear from the input field with the placeholder "Add New Task" text returning.
 
 3. *Complete task* feature
-  1. Render an example task to the task list.
-  2. Click on the visible grey circle on that task item. The grey circle should change to a green circle with a tick. Additionally the text in the task item will change colour from black to grey and will be scored through.
-  3. Refresh the browser and confirm that the task remains marked as complete - confirming the action of marking the task complete was updated to local storage.
-  4. Click on the green circle (with tick). The green circle should rever to the original grey circle. Task text should no longer be scored through and should have changed colour from grey to black.
-  5. Refresh the browser and confirm that the task remains marked as uncomplete - confirming the action of marking the task as not completed was updated to local storage.
+    1. Render an example task to the task list.
+    2. Click on the visible grey circle on that task item. The grey circle should change to a green circle with a tick. Additionally the text in the task item will change colour from black to grey and will be scored through.
+    3. Refresh the browser and confirm that the task remains marked as complete - confirming the action of marking the task complete was updated to local storage.
+    4. Click on the green circle (with tick). The green circle should rever to the original grey circle. Task text should no longer be scored through and should have changed colour from grey to black.
+    5. Refresh the browser and confirm that the task remains marked as uncomplete - confirming the action of marking the task as not completed was updated to local storage.
 
 4. *Edit task* feature
-  1. Render an example task to the task list.
-  2. Hover mouse over the example task item, where 2 icons should then appear.
-  3. Click the blue edit symbol. The text field in the example task item should become editable, evidenced by an border outline appearing around the text, a flashing cursor position appearing at the start of the text field, and a *SAVE* icon appearing to the right of the task item, with all other icons disappearing.
-  4. Update the example task text. Press the return key. Confirm that the outline border on the task item disappears, the flashing cursor position disappears, the *SAVE* icon disappears, and all other icons reappear.
-  5. Repeat Steps 2-4, however in stead of *pressing the return key*, click the *SAVE* icon when the task item text has been updated. The same outcome as described in Step 4 should result.
-  6. Following Steps 4 & 5, refresh the browser to ensure the edited task item text is retained - confirming the text has been update to local storage.
+    1. Render an example task to the task list.
+    2. Hover mouse over the example task item, where 2 icons should then appear.
+    3. Click the blue edit symbol. The text field in the example task item should become editable, evidenced by an border outline appearing around the text, a flashing cursor position appearing at the start of the text field, and a *SAVE* icon appearing to the right of the task item, with all other icons disappearing.
+    4. Update the example task text. Press the return key. Confirm that the outline border on the task item disappears, the flashing cursor position disappears, the *SAVE* icon disappears, and all other icons reappear.
+    5. Repeat Steps 2-4, however in stead of *pressing the return key*, click the *SAVE* icon when the task item text has been updated. The same outcome as described in Step 4 should result.
+    6. Following Steps 4 & 5, refresh the browser to ensure the edited task item text is retained - confirming the text has been update to local storage.
 
 5. *Delete task* feature
-  1. Render an example task to the task list.
-  2. Hover mouse over the example task item, where 2 icons should then appear.
-  3. Click the red trash symbol.
-  4. The example task should disappear from the task list.
-  5. Refresh the browser to ensure the example task remains deleted from the task list - confirming the action of deleting the task item has been updated to local storage.
+    1. Render an example task to the task list.
+    2. Hover mouse over the example task item, where 2 icons should then appear.
+    3. Click the red trash symbol.
+    4. The example task should disappear from the task list.
+    5. Refresh the browser to ensure the example task remains deleted from the task list - confirming the action of deleting the task item has been updated to local storage.
 
 6. *Delete completed tasks* feature
-  1. Render 4 example tasks to the task list.
-  2. Upon rendering the first example task, a button entitled "Delete Completed Tasks" should appear immediately below the task list.
-  3. Mark one example task complete, as instructed in Test 3, above.
-  4. Click on the "Delete Completed Tasks" button. A modal should appear asking for confirmation as to whether you wish to delete completed tasks.
-  5. Select the "No" option. The modal should disappear, with the task list again visible. All 4 task items should remain, with one marked completed.
-  6. Repeat Step 4.
-  7. Select the "Yes" option. The modal should disappaer, with the task list again visible. There should be 3 task items remaining, with the task item marked complete having disappeared.
-  8. Refresh the browser to ensure the example task that had been deleted remains excluded from the task list - confirming the action of deleting the task item has been updated to local storage.
-  9. Repeat Steps 3-8, howevever mark 2 of the remaining 3 task items complete, so as to prove that the function works in the same way whether 1 or more task item is marked complete.
+    1. Render 4 example tasks to the task list.
+    2. Upon rendering the first example task, a button entitled "Delete Completed Tasks" should appear immediately below the task list.
+    3. Mark one example task complete, as instructed in Test 3, above.
+    4. Click on the "Delete Completed Tasks" button. A modal should appear asking for confirmation as to whether you wish to delete completed tasks.
+    5. Select the "No" option. The modal should disappear, with the task list again visible. All 4 task items should remain, with one marked completed.
+    6. Repeat Step 4.
+    7. Select the "Yes" option. The modal should disappaer, with the task list again visible. There should be 3 task items remaining, with the task item marked complete having disappeared.
+    8. Refresh the browser to ensure the example task that had been deleted remains excluded from the task list - confirming the action of deleting the task item has been updated to local storage.
+    9. Repeat Steps 3-8, howevever mark 2 of the remaining 3 task items complete, so as to prove that the function works in the same way whether 1 or more task item is marked complete.
 
 7. *Delete all tasks* feature
-  1. Render 2 example tasks to the task list.
-  2. Upon rendering the first example task, a button entitled "Delete All Tasks" should appear immediately below the task list.
-  3. Click on the "Delete All Tasks" button. A modal should appear asking for confirmation as to whether you wish to delete all tasks.
-  4. Select the "No" option. The modal should disappear, with the task list again visible. Both task items should remain.
-  5. Repeat Step 3.
-  6. Select the "Yes" option. The modal should disappear. There should be no remaining task list (only the input field).
-  7. Refresh the browser to ensure that both example tasks remain excluded from the task list/there remains no task list displayed - confirming the action of deleting the task item has been updated to local storage.
+    1. Render 2 example tasks to the task list.
+    2. Upon rendering the first example task, a button entitled "Delete All Tasks" should appear immediately below the task list.
+    3. Click on the "Delete All Tasks" button. A modal should appear asking for confirmation as to whether you wish to delete all tasks.
+    4. Select the "No" option. The modal should disappear, with the task list again visible. Both task items should remain.
+    5. Repeat Step 3.
+    6. Select the "Yes" option. The modal should disappear. There should be no remaining task list (only the input field).
+    7. Refresh the browser to ensure that both example tasks remain excluded from the task list/there remains no task list displayed - confirming the action of deleting the task item has been updated to local storage.
 
 ### Testing - functionality
 

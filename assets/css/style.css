@@ -227,16 +227,14 @@ header {
   border-radius: 25px;
 }
 
-.content {
-}
-
 #taskList {
   width: 100%;
   float: left;
   list-style: none;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 10px 10px 10px;
   padding: 0 15px;
-
+  max-height: 60vh;
+  overflow: auto;
 }
 
 .taskItem {
@@ -454,6 +452,7 @@ div.todo-modal div.tingle-modal-box__footer {
   font-size: 1.2em;
   letter-spacing: 1px;
   box-shadow: 1px 2px 4px rgba(44, 62, 80, 0.30);
+  outline: none;
 }
 
 button.tingle-btn--primary {

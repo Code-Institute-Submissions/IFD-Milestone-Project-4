@@ -14,7 +14,9 @@ Live application demo can be found [**here**](https://michaelphann.github.io/IFD
   * [Future features](#Future-features)
 * [Technologies Used](#Technologies-Used)
 * [Testing](#Testing)
-  * [Bugs](#Bugs)
+  * [Testing: implemented features](#Testing-implemented-features)
+  * [Testing: functionality](#Testing-functionality)
+  * [Testing: bugs](#Testing-bugs)
 * [Deployment](#Deployment)
 * [Credits](#Credits)
   * [Content](#Content)
@@ -91,7 +93,7 @@ _____
 ## Testing
 
 
-### User Testing
+### User testing
 User testing was the primary method of testing adoped during this project. A number of people were asked to test the application, with a variety of devices used (both mobile and tablet) during the latter stages of the project. This testing and feedback was incredibly helpful in debugged and finalising design/format.
 
 ### Testing - implemented features

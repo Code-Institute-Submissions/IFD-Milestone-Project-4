@@ -62,7 +62,6 @@ function getResults(latitude, longitude) {
         })
         .then(function(data) {
             weather.city = data.name;
-            // weather.country = data.sys.country;
             weather.temperature.value = Math.floor(data.main.temp);
             weather.minTemp.value = Math.floor(data.main.temp_min);
             weather.maxTemp.value = Math.floor(data.main.temp_max);
@@ -76,7 +75,6 @@ function getResults(latitude, longitude) {
 
 // Display Results
 function displayResults() {
-    // locationElement.innerHTML = `${weather.city}, ${weather.country}`;
     locationElement.innerHTML = `${weather.city}`; 
     temperatureElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     minMaxElement.innerHTML = `L: ${weather.minTemp.value}°<span>C</span> / H: ${weather.maxTemp.value}°<span>C</span>`;

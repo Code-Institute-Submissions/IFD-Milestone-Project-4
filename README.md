@@ -95,13 +95,13 @@ _____
 ### Implemented features
 
 1. Date/Weather banner
-  1. Load application to browser.
-  2. The current day & date should be displayed immediately.
-  3. If the user's town/city location and local weather conditions are not immediately displayed, the user should enable the browser to access the user's location, i.e. enable geolocation functionality.
-  4. Once *allowed*, the user's town/city location and local weather conditions should be displayed.
-  5. Repeat Steps 1-3, however in Step 3, the user should deny the browser access to the user's location. This may need to be set prior to reloading the browser, depending on the user's normal setting.
-  6. Once *denied*, a browser-generated error message, e.g. "User denied Geolocation" in Chrome will be displayed, in plact of a town/city location. Additionally, weather conditions will not be displayed.
-  7. If the user's browser does not support Geolocation functionality, a browser-generated error will be displayed to confirm this.
+    1. Load application to browser.
+    2. The current day & date should be displayed immediately.
+    3. If the user's town/city location and local weather conditions are not immediately displayed, the user should enable the browser to access the user's location, i.e. enable geolocation functionality.
+    4. Once *allowed*, the user's town/city location and local weather conditions should be displayed.
+    5. Repeat Steps 1-3, however in Step 3, the user should deny the browser access to the user's location. This may need to be set prior to reloading the browser, depending on the user's normal setting.
+    6. Once *denied*, a browser-generated error message, e.g. "User denied Geolocation" in Chrome will be displayed, in plact of a town/city location. Additionally, weather conditions will not be displayed.
+    7. If the user's browser does not support Geolocation functionality, a browser-generated error will be displayed to confirm this.
 
 2. Input task field
     1. Click on input field.

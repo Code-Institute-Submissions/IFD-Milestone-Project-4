@@ -19,7 +19,7 @@ Live application demo can be found [**here**](https://michaelphann.github.io/IFD
   * [Bugs](#Bugs)
 * [Deployment](#Deployment)
 * [Credits](#Credits)
-  * [Content & Media](#Content-/-Media)
+  * [Content / Media](#Content-/-Media)
   * [Acknowledgements](#Acknowledgements)
 
 

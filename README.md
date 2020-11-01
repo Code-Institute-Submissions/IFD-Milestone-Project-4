@@ -96,7 +96,7 @@ _____
 ### User testing
 User testing was the primary method of testing adoped during this project. A number of people were asked to test the application, with a variety of devices used (both mobile and tablet) during the latter stages of the project. This testing and feedback was incredibly helpful in debugged and finalising design/format.
 
-### Testing - implemented features
+### Implemented features
 
 1. Date/Weather banner
   1. 
@@ -150,10 +150,10 @@ User testing was the primary method of testing adoped during this project. A num
     6. Select the "Yes" option. The modal should disappear. There should be no remaining task list (only the input field).
     7. Refresh the browser to ensure that both example tasks remain excluded from the task list/there remains no task list displayed - confirming the action of deleting the task item has been updated to local storage.
 
-### Testing - functionality
+### Functionality
 
 
-### Testing - bugs
+### Bugs
 
 
 ## Deployment

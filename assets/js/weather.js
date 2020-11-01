@@ -79,7 +79,7 @@ function displayResults() {
     // locationElement.innerHTML = `${weather.city}, ${weather.country}`;
     locationElement.innerHTML = `${weather.city}`; 
     temperatureElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-    minMaxElement.innerHTML = `H: ${weather.maxTemp.value}°<span>C</span> / L: ${weather.minTemp.value}°<span>C</span>`;
+    minMaxElement.innerHTML = `L: ${weather.minTemp.value}°<span>C</span> / H: ${weather.maxTemp.value}°<span>C</span>`;
     iconElement.innerHTML = `<img src="assets/icons/${weather.iconId}.png"/>`;
 }
 

@@ -69,22 +69,22 @@ function renderExistingTasks () {
 // Add Task
 // (a) If input field contains value and PLUS button is pressed
 taskBtn.addEventListener("click", function() {
-        addItem();
+    addItem();
 });
 
 // (b) If input field contains value and return key (13) pressed
 document.addEventListener("keypress", function(event) {
     if(event.which === 13) {
-            addItem();
+        addItem();
     }
 });
 
 function addItem() {
   let todo = taskInput.value;
   if(todo) {
-    renderNewTask(todo);
-    saveTask(todo);
-    taskInput.value="";
+      renderNewTask(todo);
+      saveTask(todo);
+      taskInput.value="";
   }
 }
 

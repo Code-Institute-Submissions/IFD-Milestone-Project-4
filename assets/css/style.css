@@ -282,6 +282,7 @@ header {
   transition: 0.2s linear;
   opacity: 0;
   cursor: pointer;
+  z-index: 0;
 }
 
 .editTask {
@@ -297,13 +298,13 @@ header {
   transition: 0.2s linear;
   opacity: 0;
   cursor: pointer;
+  z-index: 0;
 }
 
 .taskItem:hover .trash,
 .taskItem:hover .editTask {
   width: 30px;
   opacity: 1.0;
-  
 }
 
 .check {
@@ -316,6 +317,7 @@ header {
   line-height: 40px;
   margin-right: 10px;
   cursor: pointer;
+  z-index: 2;
 }
 
 .save {

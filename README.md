@@ -19,7 +19,7 @@ Live application demo can be found [**here**](https://michaelphann.github.io/IFD
   * [Bugs](#Bugs)
 * [Deployment](#Deployment)
 * [Credits](#Credits)
-  * [Content / Media](#Content-/-Media)
+  * [Content & Media](#Content-&-Media)
   * [Acknowledgements](#Acknowledgements)
 
 
@@ -198,7 +198,7 @@ For more information or guidance, please see the relevant help section [Cloning 
 
 ### Content / Media
 * The weather icons used for this app were created by the graphic designer, Ashley Jager. The link to her repo is [here](https://github.com/manifestinteractive/weather-underground-icons).
-* The weather API provider is [Open Weather API](http://www.OpenWeatherMap.org)
+* The weather API provider is [Open Weather API](http://www.OpenWeatherMap.org).
 
 ### Acknowledgements
 I would like to thank my mentor, [Sandeep Aggarwal](https://github.com/asandeep), for his constructive feedback and guidance throughout the project.

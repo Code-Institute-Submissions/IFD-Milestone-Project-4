@@ -46,7 +46,7 @@ The purpose of this application is to provide the user with a simple yet functio
 * "Quicksand" font used throughout the app. It is an engaging, easy-to-read and versatile font. A variety of letter spacing used across device type.
 
 ### Wireframes
-Wireframes for this website can be accessed in my wireframes folder within this github repository - [my wireframes](XXXXXXXX)
+Wireframes for this website can be accessed in my wireframes folder within this github repository - [my wireframes](https://github.com/MichaelpHann/IFD-Milestone-Project/tree/master/Wireframes)
 
 
 ## Features
@@ -88,6 +88,7 @@ _____
 * [JSHint](https://jshint.com/) to validate the JavaScript code.
 * [W3C CSS validation](https://jigsaw.w3.org/css-validator/) to validate CSS. 
 * [W3C Markup Validation](https://validator.w3.org/) to validate HTML code.
+* 
 
 ## Testing
 

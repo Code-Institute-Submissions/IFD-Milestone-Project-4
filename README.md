@@ -88,7 +88,7 @@ _____
 * [JSHint](https://jshint.com/) to validate the JavaScript code.
 * [W3C CSS validation](https://jigsaw.w3.org/css-validator/) to validate CSS. 
 * [W3C Markup Validation](https://validator.w3.org/) to validate HTML code.
-* 
+* [Auto-prefixer](https://autoprefixer.github.io/) to ensure the css includes all necessary browser prefixes it needs.
 
 ## Testing
 

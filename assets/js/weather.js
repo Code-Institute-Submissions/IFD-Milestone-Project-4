@@ -2,7 +2,9 @@
 
 //.....(1) Weather......
 
-// Selectors
+/**
+ * Setting selector variables
+*/
 const locationElement = document.querySelector(".location p");
 const notificationElement = document.querySelector(".error-notification");
 const temperatureElement = document.querySelector(".temperature p");
@@ -10,22 +12,29 @@ const minMaxElement = document.querySelector(".min-max-temp p");
 const iconElement = document.querySelector(".weather-icon");
 
 
-// Weather data object
+/**
+ * Setting up weather data object and default temperatures as celsius.
+*/
 const weather = {};
 weather.temperature = {
     unit: "celsius"
-}
+};
 weather.maxTemp = {
     unit: "celsius"
-}
+};
 weather.minTemp = {
     unit: "celsius"
-}
+};
 
-// API key
+/**
+ * API key
+*/
 const key = "7050354d2e4e384aee208eb160eea894";
 
-// Check if browser supports geolocation
+/**
+ * Check if the user's browser supports Geolocation.
+ * If it does not, render an error message to the user's browser.
+ */
 if("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(setPosition, showError);
 } else {
@@ -34,7 +43,11 @@ if("geolocation" in navigator) {
     minMaxElement.parentNode.classList.add("noDisplay");
 }
 
-// Set user's position
+/**
+ * Setting user's position using latitude and longitude coordinates.
+ * 
+ * @param {string} position
+ */
 function setPosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
@@ -42,7 +55,12 @@ function setPosition(position) {
     getResults(latitude, longitude);
 }
 
-// Show error when there is an issue with geolocation
+/**
+ * Show error when there is an issue with Geolocation
+ * Error message displayed with other elements excluded.
+ * 
+ * @param {string} error 
+ */
 function showError(error) {
     notificationElement.style.display = "block";
     notificationElement.innerHTML = `<p>${error.message}</p>`;
@@ -51,7 +69,18 @@ function showError(error) {
     temperatureElement.parentNode.style.cssText = "height: 50px; margin-left: 30px; display: flex; align-items: center";
 }
 
-// Get results from API provider
+/**
+ * Get results from API provider based on user's postion (latitude & longitude).
+ * 
+ * @param {number} latitude 
+ * @param {number} longitude
+ * 
+ * Fetch API data based on user's position.
+ * @returns {object} multiple data based on users location.
+ * Data is called and passed into Weather object.
+ * 
+ * displayResults function is called.
+ */
 function getResults(latitude, longitude) {
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${key}`;
     
@@ -73,7 +102,9 @@ function getResults(latitude, longitude) {
         });
 }
 
-// Display Results
+/**
+ * Rendering data outputs, passed into the Weather object, to the browser.
+ */
 function displayResults() {
     locationElement.innerHTML = `${weather.city}`; 
     temperatureElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
@@ -81,18 +112,31 @@ function displayResults() {
     iconElement.innerHTML = `<img src="assets/icons/${weather.iconId}.png"/>`;
 }
 
-// Convert Celsius to Fahrenheit
+/**
+ * Calculation to convert celsius to fahrenheit.
+ * 
+ * @param {number} temperature in celsius
+ * @returns {number} temperature in fahrenheit
+ */
 function celsiusToFahrenheit(temperature) {
     return (temperature * 9/5) + 32;
 }
 
-// When the user clicks on the temperature element
+/**
+ * Converting Celsius to Fahrenheit when user clicks on temperature rendered to the browser
+ * 
+ * Click event listener triggers function being called.
+ * 
+ * Current temperature, max temperature and min temperature as converted, if being displayed.
+ * 
+ * @returns {undefined} if there is an error and temperature is not displayed.
+ */
 temperatureElement.addEventListener("click", function() {
     if(weather.temperature.value === undefined) return;
     
     if(weather.temperature.unit == "celsius") {
         let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
-        let minFahrenheit = celsiusToFahrenheit(weather.minTemp.value)
+        let minFahrenheit = celsiusToFahrenheit(weather.minTemp.value);
         let maxFahrenheit = celsiusToFahrenheit(weather.maxTemp.value);
         fahrenheit = Math.floor(fahrenheit);
         minFahrenheit = Math.floor(minFahrenheit);
@@ -111,7 +155,9 @@ temperatureElement.addEventListener("click", function() {
 //.....(2) Date......
 const dateElement = document.querySelector(".date");
 
-// Generate today's Date
+/**
+ * Generates the current day's date and renders to the browser.
+ */
 let options = {
     weekday: "short",
     day: "numeric",

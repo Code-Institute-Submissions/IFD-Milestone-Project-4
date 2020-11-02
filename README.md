@@ -40,7 +40,7 @@ The purpose of this application is to provide the user with a simple yet functio
 
 ### Design choices
 * A minimalist user interface that enables quick access and straight forward functionality.
-* Distinct input field and mobile-friendly large "ADD" button.
+* Distinct input field and mobile-friendly large *ADD* Item button.
 * Compact, clear date/weather banner to provide a simple summary for the user.
 * Complementary colours throughout the app to ensure ease of reading of the user across device type.
 * "Quicksand" font used throughout the app. It is an engaging, easy-to-read and versatile font. A variety of letter spacing used across device type.
@@ -52,8 +52,8 @@ Wireframes for this website can be accessed in my wireframes folder within this 
 ## Features
 
 ### Existing features
-* **Current date & weather overview** - a summary banner that provides the user with an at-a-glance view of the date, user location and current weather. Location and current weather view are dependent on both geolocation being supported by the user's browser and the user allowing geolocation access.
-* **Add task item** - an input feature to add individual task items. Items can be added by both return key, if being used on desktop or tablet, or via a mobile/tablet-friendly *Add Item* button.
+* **Current date & weather overview** - a summary banner that provides the user with an at-a-glance view of the date, user location and current weather. Location and current weather view are dependent on both Geolocation being supported by the user's browser and the user allowing Geolocation access.
+* **Add task item** - an input feature to add individual task items. Items can be added by both return key, if being used on desktop or tablet, or via a mobile/tablet-friendly *ADD* Item button.
 * **Save to local storage** - the ability to store task list content, including the status of individual task items, e.g. complete/incomplete. Ensures task list is retained even if browser is refreshed or browser window closed. Task list/items will remain until user chooses to delete them via dedicated app features.
 * **Individual item features**
   * *Mark task complete* - the ability to mark a task complete where it will appear with a green check box and text scored through. Items marked as complete will be updated in local storage.
@@ -76,7 +76,7 @@ _____
 * [JavaScript](https://www.javascript.com/) - used to provide application interactivity.
 * [Google Fonts](https://fonts.google.com/) - used to style the application text fonts.
 * [Font Awesome](https://fontawesome.com/) - used to style the application icons.
-* [Open Weather API](https://openweathermap.org/api) - API plugin to access up-to-date weather data.
+* [Open Weather API](https://openweathermap.org/api) - API plugin to access weather data.
 * [Tingle.js](https://tingle.robinparisi.com/) - API plugin modal template.
 * [VS Code](https://code.visualstudio.com/) - used Visual Studio Code 2 source code editor for local development.
 * [GIT](https://git-scm.com/) - used GitPod for version control.
@@ -88,7 +88,6 @@ _____
 * [JSHint](https://jshint.com/) to validate the JavaScript code.
 * [W3C CSS validation](https://jigsaw.w3.org/css-validator/) to validate CSS. 
 * [W3C Markup Validation](https://validator.w3.org/) to validate HTML code.
-* [Auto-prefixer](https://autoprefixer.github.io/) to ensure the css has all prefixes it needs, in order  to work properly on all modern browsers. 
 
 ## Testing
 
@@ -96,17 +95,17 @@ _____
 
 1. Date/Weather banner
     1. Load application to browser.
-    2. The current day & date should be displayed immediately.
-    3. If the user's town/city location and local weather conditions are not immediately displayed, the user should enable the browser to access the user's location, i.e. enable geolocation functionality.
+    2. The current day & date should always display immediately.
+    3. If the user's town/city location and local weather conditions are not immediately displayed, the user should enable the browser to access the user's location, i.e. enable Geolocation functionality.
     4. Once *allowed*, the user's town/city location and local weather conditions should be displayed.
     5. Repeat Steps 1-3, however in Step 3, the user should deny the browser access to the user's location. This may need to be set prior to reloading the browser, depending on the user's normal setting.
-    6. Once *denied*, a browser-generated error message, e.g. "User denied Geolocation" in Chrome will be displayed, in plact of a town/city location. Additionally, weather conditions will not be displayed.
+    6. Once *denied*, a browser-generated error message, e.g. "User denied Geolocation" in Chrome, will be displayed, in place of a town/city location. Additionally, weather conditions will not be displayed.
     7. If the user's browser does not support Geolocation functionality, a browser-generated error will be displayed to confirm this.
 
 2. Input task field
     1. Click on input field.
-    2. Without typing any text or pressing the space bar, click the *ADD* button. There should be no response, with no task added to the list.
-    3. Without typing any text or pressing the space bar, press the return key. There should be no response, with no task added to the list.
+    2. Without typing any text or pressing the space bar, click the *ADD* button. There should be no response, with no task rendered to the list.
+    3. Without typing any text or pressing the space bar, press the return key. There should be no response, with no task rendered to the list.
     4. Type an example task in the input field, click the *ADD* button. The example task should render below the input field to the task list. The example task text should clear from the input field with the placeholder "Add New Task" text returning.
     5. Type another example task in the input field, press the return key. The example task should render below the input field to the task list. The example task text should clear from the input field with the placeholder "Add New Task" text returning.
 
@@ -114,20 +113,20 @@ _____
     1. Render an example task to the task list.
     2. Click on the visible grey circle on that task item. The grey circle should change to a green circle with a tick. Additionally the text in the task item will change colour from black to grey and will be scored through.
     3. Refresh the browser and confirm that the task remains marked as complete - confirming the action of marking the task complete was updated to local storage.
-    4. Click on the green circle (with tick). The green circle should rever to the original grey circle. Task text should no longer be scored through and should have changed colour from grey to black.
-    5. Refresh the browser and confirm that the task remains marked as uncomplete - confirming the action of marking the task as not completed was updated to local storage.
+    4. Click on the green circle (with tick). The green circle should revert to the original grey circle. Task text should no longer be scored through and should have changed colour from grey to black.
+    5. Refresh the browser and confirm that the task remains marked as incomplete - confirming the action of marking the task as not completed was updated to local storage.
 
 4. *Edit task* feature
     1. Render an example task to the task list.
-    2. Hover mouse over the example task item, where 2 icons should then appear.
-    3. Click the blue edit symbol. The text field in the example task item should become editable, evidenced by an border outline appearing around the text, a flashing cursor position appearing at the start of the text field, and a *SAVE* icon appearing to the right of the task item, with all other icons disappearing.
+    2. On desktop, hover mouse over the example task item. On mobile or tablet, press once on the task item. 2 icons should then appear - an edit icon and a trash icon.
+    3. Click the blue edit symbol. The text field in the example task item should become editable, evidenced by a grey border outline appearing around the text, a flashing cursor position appearing at the start of the text field, and a *SAVE* icon appearing to the right of the task item, with all other icons disappearing.
     4. Update the example task text. Press the return key. Confirm that the outline border on the task item disappears, the flashing cursor position disappears, the *SAVE* icon disappears, and all other icons reappear.
     5. Repeat Steps 2-4, however in stead of *pressing the return key*, click the *SAVE* icon when the task item text has been updated. The same outcome as described in Step 4 should result.
     6. Following Steps 4 & 5, refresh the browser to ensure the edited task item text is retained - confirming the text has been update to local storage.
 
 5. *Delete task* feature
     1. Render an example task to the task list.
-    2. Hover mouse over the example task item, where 2 icons should then appear.
+    2. On desktop, hover mouse over the example task item. On mobile or tablet, press once on the task item. 2 icons should then appear - an edit icon and a trash icon.
     3. Click the red trash symbol.
     4. The example task should disappear from the task list.
     5. Refresh the browser to ensure the example task remains deleted from the task list - confirming the action of deleting the task item has been updated to local storage.
@@ -137,9 +136,9 @@ _____
     2. Upon rendering the first example task, a button entitled "Delete Completed Tasks" should appear immediately below the task list.
     3. Mark one example task complete, as instructed in Test 3, above.
     4. Click on the "Delete Completed Tasks" button. A modal should appear asking for confirmation as to whether you wish to delete completed tasks.
-    5. Select the "No" option. The modal should disappear, with the task list again visible. All 4 task items should remain, with one marked completed.
+    5. Select the "No" option. The modal should disappear, with the task list again visible. All 4 task items should remain, with the same task marked complete.
     6. Repeat Step 4.
-    7. Select the "Yes" option. The modal should disappaer, with the task list again visible. There should be 3 task items remaining, with the task item marked complete having disappeared.
+    7. Select the "Yes" option. The modal should disappear, with the task list again visible. There should be 3 task items remaining, with the task item marked complete having disappeared.
     8. Refresh the browser to ensure the example task that had been deleted remains excluded from the task list - confirming the action of deleting the task item has been updated to local storage.
     9. Repeat Steps 3-8, howevever mark 2 of the remaining 3 task items complete, so as to prove that the function works in the same way whether 1 or more task item is marked complete.
 
@@ -153,7 +152,7 @@ _____
     7. Refresh the browser to ensure that both example tasks remain excluded from the task list/there remains no task list displayed - confirming the action of deleting the task item has been updated to local storage.
 
 ### Functionality
-Google Chrome Developer was the principal tool used throughout the build to text functionality and device responsiveness. Additionally, in the latter stages, application responsiveness was tested via live user testing across a range of mobile, tablet and deskotp devices. All feedback provided as part of this testing has been considered and, where necessary, incorporated into the application.
+Google Chrome Developer was the principal tool used throughout the build to test functionality and device responsiveness. Additionally, in the latter stages, application responsiveness was tested via live user testing across a range of mobile, tablet and deskotp devices. All feedback provided as part of this testing has been considered and, where necessary, incorporated into the application.
 
 ### Bugs
 * Geolocation functionality, as currently developed, does not appear to be supported on Safari or Firefox.
@@ -163,8 +162,8 @@ Google Chrome Developer was the principal tool used throughout the build to text
 
 This project was developed using VS Code, with the repository stored on GitHub.
 
-* The GitHub repository is [here](https://github.com/MichaelpHann/IFD-Milestone-Project)
-* The website is live [here](https://michaelphann.github.io/IFD-Milestone-Project/)
+* The GitHub repository is [here](https://github.com/MichaelpHann/IFD-Milestone-Project).
+* The website is live [here](https://michaelphann.github.io/IFD-Milestone-Project/).
 
 #### This application was deployed on GitHub Pages by undertaking the following steps:
 1. On Github, navigate to the repository - https://github.com/MichaelpHann/IFD-Milestone-Project
@@ -183,7 +182,7 @@ You must first ensure:
 
 To clone this project from GitHub:
 
-1. On GitHub, navigate to the project repository [here](https://github.com/MichaelpHann/IFD-Milestone-Project).
+1. On GitHub, navigate to the project repository - https://github.com/MichaelpHann/IFD-Milestone-Project.
 2. Under the repository name, select the green **Clone or download** dropdown button.
 3. Highlight the URL provided or click the button to copy the URL.
 4. Open your terminal.
